@@ -8,15 +8,25 @@ try {
 
 	$stmt = $pdo->prepare('DELETE FROM User WHERE UserId = :UserId');
 	$stmt->execute(array(
-        'UserId' => $_POST["userId"]
-        ));
+    'UserId' => $_POST["userId"]
+    ));
 
+  $count = $stmt.rowCount();
+
+  if($count > 0) {
     $result = array(
-    	'result' => 'success',
-    	'message' => 'User deleted.'
-        );
-
+      'result' => 'success',
+      'message' => 'User deleted.'
+      );
     echo json_encode($result);
+  }
+  else {
+    $result = array(
+      'result' => 'error',
+      'message' => 'User not deleted.'
+      );
+    echo json_encode($result);
+  }
 }
 catch(PDOException $e) {
 

@@ -13,13 +13,22 @@ try {
 		':Password' => password_hash($_POST["password"], PASSWORD_DEFAULT)
 		));
 
-	$result = array(
-		'result' => 'success',
-		'message' => 'User created.'
-		);
+	$count = $stmt.rowCount();
 
-	echo json_encode($result);
-
+	if($count > 0) {
+		$result = array(
+			'result' => 'success',
+			'message' => 'User created.'
+			);
+		echo json_encode($result);
+	}
+	else {
+		$result = array(
+			'result' => 'error',
+			'message' => 'User not created.'
+			);
+		echo json_encode($result);
+	}
 }
 catch(PDOException $e) {
 
