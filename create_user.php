@@ -6,11 +6,11 @@ try {
 	$pdo = new PDO($dsn, $username, $password);
 	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-	$stmt = $pdo->prepare('INSERT INTO User VALUES(:Username, :Email, :Password)');
+	$stmt = $pdo->prepare('INSERT INTO User (Username, Email, Password) VALUES(:Username, :Email, :Password)');
 	$stmt->execute(array(
     ':Username' => $_POST["username"],
     ':Email' => $_POST["email"],
-    'Password' => password_hash($_POST["password"])
+    ':Password' => password_hash($_POST["password"])
     ));
 
     $result = array(
