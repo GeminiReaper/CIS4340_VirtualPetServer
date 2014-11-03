@@ -1,24 +1,42 @@
 <!doctype html>
 <html>
 <body>
-<form method="post" action="create_user.php">
-<legend>Create User</legend>
-<label>Username</label>
-<input type="text" name="username">
-<label>Email</label>
-<input type="text" name="email">
-<label>Password</label>
-<input type="password" name="password">
-<input type="submit" value="Create User">
-</form>
-<br>
-<form method="post" action="login.php">
-<legend>Login</legend>
-<label>Username</label>
-<input type="text" name="username">
-<label>Password</label>
-<input type="password" name="password">
-<input type="submit" value="Login">
-</form>
+	<form method="post" action="create_user.php">
+		<legend>Create User</legend>
+		<label>Username</label>
+		<input type="text" name="username">
+		<label>Email</label>
+		<input type="text" name="email">
+		<label>Password</label>
+		<input type="password" name="password">
+		<input type="submit" value="Create User">
+	</form>
+	<br>
+	<form method="post" action="login.php">
+		<legend>Login</legend>
+		<label>Username</label>
+		<input type="text" name="username">
+		<label>Password</label>
+		<input type="password" name="password">
+		<input type="submit" value="Login">
+	</form>
+	<br>
+	<form method="post" action="update_user.php">
+		<legend>Update User</legend>
+		<label>UserId</label>
+		<input type="text" name="userId">
+		<label>Email</label>
+		<input type="text" name="email">
+		<label>Password</label>
+		<input type="password" name="password">
+		<input type="submit" value="Update User">
+	</form>
+	<br>
+	<form method="post" action="delete_user.php">
+		<legend>Delete User</legend>
+		<label>UserId</label>
+		<input type="text" name="userId">
+		<input type="submit" value="Delete User">
+	</form>
 </body>
 </html>

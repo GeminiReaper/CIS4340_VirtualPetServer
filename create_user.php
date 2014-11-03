@@ -8,25 +8,25 @@ try {
 
 	$stmt = $pdo->prepare('INSERT INTO User (Username, Email, Password) VALUES(:Username, :Email, :Password)');
 	$stmt->execute(array(
-    ':Username' => $_POST["username"],
-    ':Email' => $_POST["email"],
-    ':Password' => password_hash($_POST["password"], PASSWORD_DEFAULT)
-    ));
+		':Username' => $_POST["username"],
+		':Email' => $_POST["email"],
+		':Password' => password_hash($_POST["password"], PASSWORD_DEFAULT)
+		));
 
-    $result = array(
-    	'result' => 'success',
-    	'message' => 'User created.'
-    );
+	$result = array(
+		'result' => 'success',
+		'message' => 'User created.'
+		);
 
-    echo json_encode($result);
+	echo json_encode($result);
 
 }
 catch(PDOException $e) {
 
-	 $result = array(
-    	'result' => 'error',
-    	'message' => $e->getMessage()
-     );
+	$result = array(
+		'result' => 'error',
+		'message' => $e->getMessage()
+		);
 
 	echo json_encode($result);
 }

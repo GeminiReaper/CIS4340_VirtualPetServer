@@ -8,8 +8,8 @@ try {
 
 	$stmt = $pdo->prepare('SELECT * FROM User WHERE Username = :Username');
 	$stmt->execute(array(
-    ':Username' => $_POST['username']
-    ));
+        ':Username' => $_POST['username']
+        ));
 
     $count = $stmt->rowCount();
 
@@ -50,12 +50,12 @@ try {
 }
 catch(PDOException $e) {
 
-	 $result = array(
-    	'result' => 'error',
-    	'message' => $e->getMessage()
-     );
+  $result = array(
+   'result' => 'error',
+   'message' => $e->getMessage()
+   );
 
-	echo json_encode($result);
+  echo json_encode($result);
 }
 
 ?>
