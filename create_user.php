@@ -14,7 +14,8 @@ try {
     ));
 
     $result = array(
-    	'result' => 'success'
+    	'result' => 'success',
+    	'message' => 'User created.'
     );
 
     echo json_encode($result);
