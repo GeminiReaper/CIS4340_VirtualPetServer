@@ -2,7 +2,7 @@
 
 $config = parse_ini_file('config.ini');
 
-$connectionString = $config['connectionString'];
+$dsn = $config['dsn'];
 $username = $config['username'];
 $password = $config['password'];
 

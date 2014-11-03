@@ -3,7 +3,7 @@
 require_once('config.php');
 
 try {
-	$pdo = new PDO($connectionString, $username, $password);
+	$pdo = new PDO($dsn, $username, $password);
 	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 	$stmt = $pdo->prepare('INSERT INTO User VALUES(:Username, :Email, :Password)');
