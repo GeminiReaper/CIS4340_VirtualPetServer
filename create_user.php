@@ -21,7 +21,13 @@ try {
 
 }
 catch(PDOException $e) {
-	echo 'ERROR: ' . $e->getMessage();
+
+	 $result = array(
+    	'result' => 'error',
+    	'message' => $e->getMessage()
+     );
+
+	echo json_encode($result);
 }
 
 ?>
