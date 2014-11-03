@@ -10,7 +10,7 @@ try {
 	$stmt->execute(array(
     ':Username' => $_POST["username"],
     ':Email' => $_POST["email"],
-    ':Password' => password_hash($_POST["password"])
+    ':Password' => password_hash($_POST["password"], PASSWORD_DEFAULT)
     ));
 
     $result = array(
