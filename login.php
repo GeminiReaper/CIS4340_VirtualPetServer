@@ -8,7 +8,7 @@ try {
 
 	$stmt = $pdo->prepare('SELECT * FROM User WHERE Username = :Username');
 	$stmt->execute(array(
-    ':Username' => $_POST['username'],
+    ':Username' => $_POST['username']
     ));
 
     $count = $stmt->rowCount();
@@ -27,8 +27,9 @@ try {
     		$result = array(
     			'result' => 'success',
     			'message' => 'User logged in.'
-    			'data' => $data
     			);
+
+    		$result['data'] = $data;
     		echo json_encode($result);
     	}
     	else {
